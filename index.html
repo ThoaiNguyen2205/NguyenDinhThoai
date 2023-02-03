@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập JS Buổi 2</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h2 class="mt-4 text-danger">Bài tập Js buổi 2</h2>
+        <div>
+          <ul>
+            <li><a href="#Bt1"> Bài Tập 1 </a></li>
+            <li><a href="#Bt2"> Bài Tập 2 </a></li>
+            <li><a href="#Bt3"> Bài Tập 3 </a></li>
+            <li><a href="#Bt4"> Bài Tập 4 </a></li>
+            <li><a href="#Bt5"> Bài Tập 5 </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container-content w-50 m-auto position-absolute" id="Bt1">
+        <div class="form-group my-4 border border-dark p-5">
+          <h3 class="text-center mb-5">Bài tập 1: Tính tiền lương nhân viên</h3>
+          <div class="form-group">
+            <p>Tiền lương 1 Ngày : 100.000VNĐ</p>
+          </div>
+          <div class="form-group">
+            <p>Nhập số ngày làm việc</p>
+            <input
+              id="soNgayLam"
+              placeholder="10 , 20 , 26 ..."
+              type="number"
+            />
+          </div>
+          <button
+            class="btn btn-success mt-3 d-block"
+            onclick="tinhTongLuong()"
+            id="btnTinhLuong"
+          >
+            Tính Lương
+          </button>
+          <br />
+          <div class="alert alert-success pe-4">
+            Kết quả : <span id="tienLuong"></span>
+          </div>
+        </div>
+
+        <div class="form-group border border-dark p-5 my-4" id="Bt2">
+          <h3 class="text-center mb-5">Bài tập 2: Tính giá trị trung bình</h3>
+          <p class="fs-5 fw-bold text-success">Nhập vào 5 số thực</p>
+          <div class="form-group mb-4">
+            <input type="number" id="soThuc1" placeholder="Nhập số thực 1" />
+          </div>
+          <div class="form-group mb-4">
+            <input type="number" id="soThuc2" placeholder="Nhập số thực 2" />
+          </div>
+          <div class="form-group mb-4">
+            <input type="number" id="soThuc3" placeholder="Nhập số thực 3" />
+          </div>
+          <div class="form-group mb-4">
+            <input type="number" id="soThuc4" placeholder="Nhập số thực 4" />
+          </div>
+          <div class="form-group mb-4">
+            <input type="number" id="soThuc5" placeholder="Nhập số thực 5" />
+          </div>
+          <button class="btn btn-success mt-3 d-block" onclick="trungBinh()">
+            Giá trị trung Bình
+          </button>
+          <br />
+          <div class="alert alert-success pe-4">
+            Kết quả : <span id="giaTriTrungBinh"></span>
+          </div>
+        </div>
+
+        <div class="form-group border border-dark p-5 my-4" id="Bt3">
+          <h3 class="text-center mb-5">Bài tập 3: Quy đổi tiền</h3>
+          <div class="form-group">
+            <p>Giá USD hiện nay : 23.500VNĐ</p>
+          </div>
+          <div class="form-group">
+            <p>Nhập số lượng USD cần quy đổi</p>
+            <input type="number" placeholder="USD" id="soLuongUSD" />
+          </div>
+          <div class="form-group">
+            <button
+              class="btn btn-success mt-3 d-block"
+              id="btn-quyDoi"
+              onclick="quyDoiTien()"
+            >
+              Quy đổi
+            </button>
+            <br />
+            <div class="alert alert-success pe-4">
+              Thành tiền : <span id="soLuongVND"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group border border-dark p-5 my-4" id="Bt4">
+          <h3 class="text-center mb-5">
+            Bài tập 4: Tính chu vi và diện tích hình chữ nhật
+          </h3>
+          <div class="form-group">
+            <p>Chiều dài</p>
+            <input type="number" placeholder="Mét" id="chieuDai" />
+          </div>
+          <div class="form-group mt-2">
+            <p>Chiều rộng</p>
+            <input type="number" placeholder="Mét" id="chieuRong" />
+          </div>
+          <div class="form-group">
+            <button
+              class="btn btn-success mt-3 d-block"
+              onclick="tinhChuViDienTich()"
+              id="tbh-phepTinh"
+            >
+              Tính toán
+            </button>
+            <br />
+            <div class="alert alert-success pe-4">
+              Kết quả :
+              <span id="chuVi" class="me-4"></span>
+              <span id="dienTich"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group border border-dark p-5 my-4" id="Bt5">
+          <h3 class="text-center mb-5">Bài Tập 5: Tính tổng 2 ký số</h3>
+          <div class="form-group">
+            <p>Nhập 1 số có 2 chữ số</p>
+            <input
+              type="number"
+              placeholder="VD : 12 , 22 , 45 , 70 ..."
+              id="soCanNhap"
+            />
+          </div>
+          <div class="form-group">
+            <button
+              class="btn btn-success mt-3 d-block"
+              id="btn-tinhTong"
+              onclick="tinhTong2KySo()"
+            >
+              Tổng 2 ký số
+            </button>
+            <br />
+            <div class="alert alert-success pe-4">
+              Kết quả : <span id="tong2KySo"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a id="button" class="text-decoration-none"></a>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
